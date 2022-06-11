@@ -68,6 +68,8 @@ else
 	LIB += -lreadline
 endif
 
+-include $(DEPS)
+
 all: $(NAME)
 
 $(NAME): libft/libft.a $(OBJS_DIR) $(OBJS)
