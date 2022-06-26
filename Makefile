@@ -68,8 +68,6 @@ else
 	LIB += -lreadline
 endif
 
--include $(DEPS)
-
 all: $(NAME)
 
 $(NAME): libft/libft.a $(OBJS_DIR) $(OBJS)
@@ -85,6 +83,8 @@ $(OBJS_DIR):
 $(OBJS_DIR)/%.o: $(SRCS_DIR)/%.c
 	gcc ${CFLAGS} -Ilibft -c -o $@ $<
 #gcc ${CFLAGS} -c $< -o ${<:.c=.o} -Ilibft
+
+-include $(DEPS)
 
 clean:
 	rm -fR $(OBJS_DIR)
